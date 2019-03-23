@@ -1,14 +1,79 @@
-
-// Color assignments 
+// Color assignments
 @font-color: @shark;
 @button-bg: @eastern-blue;
-@main-bg:  @white;
+@main-bg: @white;
 @navigation-border: @silver;
 @footer-bg: @sandy-beach;
 
 // Colors
-@white: #FFFFFF;
-@silver: #C0C0C0;
+@white: #ffffff;
+@silver: #c0c0c0;
 @shark: #212529;
-@eastern-blue: #17A2B8;
-@sandy-beach: #FFEBCD;
+@eastern-blue: #17a2b8;
+@sandy-beach: #ffebcd;
+
+// max-width 500px;
+@max500: ~'(max-width: 500px), (max-width: 875px)';
+.home {
+  @media @max500 {
+    padding: 0px 20px;
+
+    .navbar {
+      display: flex;
+      flex-flow: column wrap;
+    }
+
+    .logo {
+      padding-bottom: 20px;
+    }
+
+    .home-header h1 {
+      font-size: 36px;
+    }
+
+    .content-section {
+      margin: 30px 0;
+      display: flex;
+      flex-flow: column wrap;
+      justify-content: flex-end;
+
+      div.text-content {
+        width: 100%;
+        padding: 0;
+      }
+
+      div.img-content {
+        width: 100%;
+        padding: 0;
+
+        img {
+          border-radius: 10px;
+        }
+      }
+    }
+
+    section.content-section.inverse-content {
+      display: flex;
+      flex-direction: column-reverse;
+    }
+
+    section.content-destination {
+      width: 100%;
+    }
+
+    section.content-pick {
+      display: flex;
+      flex-direction: column;
+
+      .destination {
+        width: 100%;
+
+        div.btn {
+          margin: 0 auto;
+          padding: 2rem 4rem;
+          min-width: 325px;
+        }
+      }
+    }
+  } // end of @media @max500
+} //end of home div
